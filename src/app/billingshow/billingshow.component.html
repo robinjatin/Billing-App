@@ -1,0 +1,43 @@
+<mat-card><div class="container" >
+    <div class="col-xs-12" style="text-align: center;">
+      
+        
+        <mat-form-field><input type="text"
+            placeholder="enter the name of item1" 
+            class="form-control"
+            [(ngModel)]="bName"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input type="text" 
+            class="form-control"
+            placeholder="enter the price of item1" 
+            [(ngModel)]="bName2"></mat-form-field>
+            <br><br>
+            <mat-form-field><input type="text" 
+            class="form-control"
+            placeholder="enter the name of item2" 
+            [(ngModel)]="bName1"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input type="text" 
+            class="form-control"
+            placeholder="enter the price of item2" 
+            [(ngModel)]="bName3"></mat-form-field>
+            <br>
+            <button 
+            mat-stroked-button
+            color="accent"
+            (click)="onClickButton1()">Generate Invoice</button>
+            <br><br>
+    </div>
+<div style="color:black;" *ngFor="let element of serverElements " class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+         <div class="panel-heading"><div>Name of item1 is {{ element.name }}</div>
+            <div class="panel-heading"></div>Name of item2 is {{ element.name1 }}</div>
+                <div class="panel-body">
+                    <div class="panel-body"> <em >Price of {{element.name}} is {{ element.price1 }}</em></div>
+                    <div class="panel-body"> <em >Price of {{element.name1}} is {{ element.price2 }}</em></div>
+                    <div class="panel-body">The total bill of {{element.name}} and {{element.name1}} is {{element.totalb}} </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+</mat-card>
